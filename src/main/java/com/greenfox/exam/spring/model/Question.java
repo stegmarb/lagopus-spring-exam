@@ -12,6 +12,7 @@ import javax.persistence.Id;
 
 @Entity
 @Getter
+@Setter
 public class Question {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

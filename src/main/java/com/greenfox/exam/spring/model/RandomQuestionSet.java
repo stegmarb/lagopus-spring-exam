@@ -2,6 +2,7 @@ package com.greenfox.exam.spring.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @Getter
 @Setter
+@Component
 public class RandomQuestionSet {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,13 +22,14 @@ public class RandomQuestionSet {
   private List<Question> questions;
 
   public RandomQuestionSet() {
-    List<String> variousQuestons = new ArrayList<>(Arrays.asList("When did your course start? (yyyy.mm.dd)",
-        "What type of dog Barbi has?",
-        "What is HerrNorbert's favourite color?",
-        "How many classes are learning at Green Fox Academy at this moment?",
-        "How many mentors teach at Green Fox at this moment?",
-        "What was the name of the first Green Fox class?",
-        "How many likes do we have on facebook?",
-        "What is Tojas's horoscope?"));
+    questions = new ArrayList<>();
+  }
+
+  public void addElement(Question question) {
+    questions.add(question);
+  }
+
+  public void changeId(int i) {
+    questions.get(i).setId((long) i+1);
   }
 }
