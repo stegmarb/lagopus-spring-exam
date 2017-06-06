@@ -1,8 +1,5 @@
 package com.greenfox.exam.spring.controller;
-import com.greenfox.exam.spring.model.Answer;
-import com.greenfox.exam.spring.model.AnswerList;
-import com.greenfox.exam.spring.model.Question;
-import com.greenfox.exam.spring.model.RandomQuestionSet;
+import com.greenfox.exam.spring.model.*;
 import com.greenfox.exam.spring.repository.AnswerRepository;
 import com.greenfox.exam.spring.repository.QuestionRepository;
 import com.sun.org.apache.xpath.internal.operations.String;
@@ -27,6 +24,9 @@ public class RestController {
 
   @Autowired
   private AnswerList answerList;
+
+  @Autowired
+  private ProjectList projectList;
 
   @GetMapping("/questions")
   public RandomQuestionSet getFiveRandomQuestions() {
@@ -63,6 +63,24 @@ public class RestController {
   }
 
   @PostMapping("/answers")
-  public void receiveAnswer(@RequestBody AnswerList answer) {
+  public ProjectList receiveAnswer(@RequestBody AnswerList answer) {
+    AnswerList userAnswers = answer;
+    int counter = 0;
+    for (int i = 0; i < answerList.getAnswers().size(); i++) {
+      if (answerList.getAnswers().get(i).getAnswer().equals(userAnswers.getAnswers().get(i).getAnswer())) {
+        counter++;
+      }
+    }
+    if (counter == answerList.getAnswers().size()) {
+    return projectList;
+    } else {
+      return new ProjectList();
+    }
+  }
+
+  @GetMapping("https://springexamserver.herokuapp.com/projects/sabers")
+  public void getProjectNames(@RequestBody ProjectList projectList) {
+    this.projectList = projectList;
+
   }
 }
