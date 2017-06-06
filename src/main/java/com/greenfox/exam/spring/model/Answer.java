@@ -17,6 +17,10 @@ public class Answer {
   public Long id;
   public String answer;
 
+  public Answer() {
+
+  }
+
   public Answer(String answer) {
     this.answer = answer;
   }

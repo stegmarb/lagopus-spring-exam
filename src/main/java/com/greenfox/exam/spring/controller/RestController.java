@@ -63,5 +63,6 @@ public class RestController {
   }
 
   @PostMapping("/answers")
-  public void receiveAnswer(@RequestBody Answer answer) {}
+  public void receiveAnswer(@RequestBody AnswerList answer) {
+  }
 }

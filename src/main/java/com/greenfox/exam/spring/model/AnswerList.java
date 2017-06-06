@@ -15,7 +15,12 @@ public class AnswerList {
   private List<Answer> answers;
 
   public AnswerList() {
-    answers = new ArrayList<>();
+    this.answers = new ArrayList<>();
+  }
+
+  public AnswerList(Long id, List<Answer> answers) {
+    this.id = id;
+    this.answers = answers;
   }
 
   public void addElement(Answer answer) {
