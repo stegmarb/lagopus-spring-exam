@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 @Getter
 @Setter
+@Component
 public class AnswerList {
   private Long id;
   private List<Answer> answers;

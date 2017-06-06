@@ -18,7 +18,6 @@ public class Answer {
   public String answer;
 
   public Answer() {
-
   }
 
   public Answer(String answer) {

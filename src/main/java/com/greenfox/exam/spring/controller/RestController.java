@@ -2,13 +2,8 @@ package com.greenfox.exam.spring.controller;
 import com.greenfox.exam.spring.model.*;
 import com.greenfox.exam.spring.repository.AnswerRepository;
 import com.greenfox.exam.spring.repository.QuestionRepository;
-import com.sun.org.apache.xpath.internal.operations.String;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -81,6 +76,5 @@ public class RestController {
   @GetMapping("https://springexamserver.herokuapp.com/projects/sabers")
   public void getProjectNames(@RequestBody ProjectList projectList) {
     this.projectList = projectList;
-
   }
 }

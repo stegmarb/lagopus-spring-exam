@@ -1,9 +1,7 @@
 package com.greenfox.exam.spring.model;
 
-import com.greenfox.exam.spring.repository.QuestionRepository;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
